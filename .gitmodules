@@ -1,0 +1,3 @@
+[submodule "open_lth"]
+	path = open_lth
+	url = git@github.com:chapter09/open_lth.git

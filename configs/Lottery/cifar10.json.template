@@ -1,0 +1,81 @@
+{
+    "clients": {
+        "total": 100,
+        "per_round": 10,
+        "label_distribution": "uniform",
+        "display_data_distribution": true
+    },
+    "data": {
+        "loading": "dynamic_init",
+        "partition": {
+            "size": 3000,
+            "range": [
+                50,
+                200
+            ],
+        "server_split": 0
+        },
+        "IID": true
+    },
+    "federated_learning": {
+        "rounds": 1000,
+        "target_accuracy": 0.95,
+        "mode": "normal"
+    },
+    "paths": {
+        "data": "./data",
+        "model": "./models",
+        "reports": "reports.pkl"
+    },
+    "server": "lth",
+    "model": "lottery",
+    "lottery": {
+        "subcommand": "train",
+        "platform": "local",
+        "display_output_location": false,
+        "num_workers": 0,
+        "replicate": 1,
+        "default_hparams": null,
+        "quiet": false,
+        "evaluate_only_at_end": false,
+        "levels": 1,
+        "rewinding_steps": null,
+        "pretrain": false,
+        "dataset_name": "cifar10",
+        "batch_size": 64, 
+        "do_not_augment": false,
+        "transformation_seed": null,
+        "subsample_fraction": null,
+        "random_labels_fraction": null,
+        "unsupervised_labels": null,
+        "blur_factor": null,
+        "model_name": "cifar_vgg_19",
+        "model_init": "kaiming_normal",
+        "batchnorm_init": "uniform",
+        "batchnorm_frozen": false,
+        "output_frozen": false,
+        "others_frozen": false,
+        "others_frozen_exceptions": null,
+        "optimizer_name": "sgd",
+        "lr": 0.1,
+        "training_steps": "5ep",
+        "data_order_seed": null,
+        "momentum": 0.9,
+        "nesterov_momentum": null,
+        "milestone_steps": "80ep,120ep",
+        "gamma": 10,
+        "warmup_steps": "10000it",
+        "weight_decay": null,
+        "apex_fp16": false,
+        "pruning_strategy": "sparse_global",
+        "pruning_fraction": 0.2,
+        "pruning_layers_to_ignore": null,
+        "client_num": 100,
+        "client_id": null,
+        "round_num": null,
+        "index_list": null,
+        "global_model_path": null,
+        "prefix_path": null
+        
+    }
+}

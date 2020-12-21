@@ -1,0 +1,80 @@
+{
+    "clients": {
+        "total": 100,
+        "per_round": 10,
+        "label_distribution": "uniform",
+        "display_data_distribution": true
+    },
+    "data": {
+        "loading": "dynamic",
+        "partition": {
+            "size": 600,
+            "range": [
+                50,
+                200
+            ],
+        "server_split": 0.1
+        },
+        "IID": true
+    },
+    "federated_learning": {
+        "rounds": 1000,
+        "aggregation": "normal",
+        "target_accuracy": 0.97,
+        "prune_level_setter": "manual"
+    },
+    "paths": {
+        "data": "./data",
+        "model": "./models",
+        "reports": "reports.pkl"
+    },
+    "server": "lth",
+    "lottery": {
+        "subcommand": "lottery",
+        "platform": "local",
+        "display_output_location": false,
+        "num_workers": 0,
+        "replicate": 1,
+        "default_hparams": null,
+        "quiet": false,
+        "evaluate_only_at_end": false,
+        "levels": 1,
+        "rewinding_steps": null,
+        "pretrain": false,
+        "dataset_name": "mnist",
+        "batch_size": 10,
+        "do_not_augment": false,
+        "transformation_seed": null,
+        "subsample_fraction": null,
+        "random_labels_fraction": null,
+        "unsupervised_labels": null,
+        "blur_factor": null,
+        "model_name": "mnist_lenet_300_100",
+        "model_init": "kaiming_normal",
+        "batchnorm_init": "uniform",
+        "batchnorm_frozen": false,
+        "output_frozen": false,
+        "others_frozen": false,
+        "others_frozen_exceptions": null,
+        "optimizer_name": "adam",
+        "lr": 1.2e-3,
+        "training_steps": "5ep",
+        "data_order_seed": null,
+        "momentum": null,
+        "nesterov_momentum": null,
+        "milestone_steps": null,
+        "gamma": null,
+        "warmup_steps": null,
+        "weight_decay": null,
+        "apex_fp16": false,
+        "pruning_strategy": "sparse_global",
+        "pruning_fraction": 0.2,
+        "pruning_layers_to_ignore": null,
+        "client_num": 100,
+        "client_id": null,
+        "round_num": null,
+        "index_list": null,
+        "global_model_path": null,
+        "prefix_path": null
+    }
+}
